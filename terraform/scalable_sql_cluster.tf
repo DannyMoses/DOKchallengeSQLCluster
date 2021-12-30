@@ -1,7 +1,6 @@
-resource "kubernetes_manifest" "sql-cluster" {
+resource "kubernetes_manifest" "scalable-sql" {
 
   manifest = {
-
     "apiVersion" = "kubedb.com/v1alpha2"
     "kind"       = "MySQL"
     "metadata" = {
