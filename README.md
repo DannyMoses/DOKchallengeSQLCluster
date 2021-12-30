@@ -36,6 +36,20 @@ installing packages on Kubernetes.
 `phpmyadmin.tf`, `sql_crd.tf` and `namespace.tf`. Because I felt committed to
 using Terraform, I converted the YAML examples to HCL using the command
 ` echo 'yamldecode(file("<yaml_file>"))' | terraform console > <tf_file>` and 
-then putting the output inside a "kubernetes_manifest" resource.
+then putting the output inside a `"kubernetes_manifest"` resource.
+
+- This is where I ran into my first major debugging hurdle. I did not have 
+enough CPU, RAM or storage to actually create the pods needed for the mysql 
+portion of the phpmyadmin deployment so while phpmyadmin worked just fine 
+and I was able to view the login page, I needed to resize the nodes I created
+in `provider.tf` as well as the persistent volume in `sql_crd.tf`. I may have
+resized it to something a little bit overkill but I did not want to run into 
+this problem again. I also realized I could have just added a few better nodes
+rather that re-provisioning the cluster but by then I was half an hour into 
+provisioning. This also caused another issue as my browser had a cookie for
+the phpmyadmin dashboard associated with the old dashboard, which broke the
+login for the "new" dashboard. Shout out to 
+[this StackOverflow answer](https://stackoverflow.com/questions/49811804/phpmyadmin-failed-to-set-session-cookie-maybe-you-are-using-http-instead-of-htt)
+for helping me solve it.
 
 
