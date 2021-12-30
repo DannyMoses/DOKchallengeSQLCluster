@@ -56,6 +56,7 @@ login for the "new" dashboard. Shout out to
 [this StackOverflow answer](https://stackoverflow.com/questions/49811804/phpmyadmin-failed-to-set-session-cookie-maybe-you-are-using-http-instead-of-htt)
 for helping me solve it.
 
+PHPMyAdmin Dashboard:
 ![The PHPMyAdmin Dashboard](screenshots/phpmyadmindashboard.PNG)
 
 ## Deploying the Scalable Cluster
@@ -68,7 +69,11 @@ to create the scalable SQL cluster. The Terraform code for this lives in `scalab
 and verified everything works using the provided `exec` commands in the guide 
 as well as the Kubernetes Dashboard.
 
+
+Pods on k8s dashboard:
 ![Viewing pods on k8s dashboard](screenshots/replicatedpods.PNG)
+
+Commands to view the pods are correctly added to the cluster + scale down CR output
 ![`exec` command to view replication](screenshots/replicated.PNG)
 ![Command line output of a scale down CR](screenshots/scale_down.PNG)
 
