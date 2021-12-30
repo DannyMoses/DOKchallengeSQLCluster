@@ -38,6 +38,10 @@ using Terraform, I converted the YAML examples to HCL using the command
 ` echo 'yamldecode(file("<yaml_file>"))' | terraform console > <tf_file>` and 
 then putting the output inside a `"kubernetes_manifest"` resource.
 
+- I ran into an issue where the default examples were not working do to the 
+default Storage Class for DigitalOcean being called `do-block-storage` and not
+`standard` but that was easily fixed by changing the provided files.
+
 - This is where I ran into my first major debugging hurdle. I did not have 
 enough CPU, RAM or storage to actually create the pods needed for the mysql 
 portion of the phpmyadmin deployment so while phpmyadmin worked just fine 
@@ -52,4 +56,18 @@ login for the "new" dashboard. Shout out to
 [this StackOverflow answer](https://stackoverflow.com/questions/49811804/phpmyadmin-failed-to-set-session-cookie-maybe-you-are-using-http-instead-of-htt)
 for helping me solve it.
 
+## Deploying the Scalable Cluster
 
+- After the initial hurdles it was mostly smooth sailing. I followed 
+[this guide](https://kubedb.com/docs/v2021.12.21/guides/mysql/scaling/horizontal-scaling/group-replication/)
+to create the scalable SQL cluster. The Terraform code for this lives in `scalable_sql_cluster.tf`.
+
+- I then tried out the example scale up and scale down CR's provided by KubeDB 
+and verified everything works using the provided `exec` commands in the guide 
+as well as the Kubernetes Dashboard.
+
+# Closing Thoughts
+
+This was an excellent challenge to get me (a recent college grad at the time of
+this writing) to finally learn such an important technology that I only had 
+limited exposure to in college. Thanks to DigitalOcean for hosting this challenge!
