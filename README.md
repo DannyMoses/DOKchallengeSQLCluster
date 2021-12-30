@@ -18,7 +18,19 @@ The requirements are:
 - I didn't even know how to provision a Kubernetes cluster at first so I first
 followed the steps on how to do that from one of the excellent 
 [presentations](https://www.youtube.com/watch?v=dCv6dRjtgHI) at the 
-DigitalOcean Deploy Conference.
+DigitalOcean Deploy Conference. 
+[This guide](https://www.digitalocean.com/community/tutorials/how-to-use-terraform-with-digitalocean) 
+is what became `provider.tf` later on.
+
+- This is where I settled on using Terraform as it seemed like the logical way
+to keep track of changes even though that the learning curve for this project
+would be steeper. 
+
+## Learning KubeDB
+- I decided to go with one of the suggestions in the challenge to use
+[KubeDB](https://kubedb.com/) as is seemed like the most straightforward way to
+set things up.
+
 
 
 
