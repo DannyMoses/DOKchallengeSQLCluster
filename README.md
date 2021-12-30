@@ -26,6 +26,10 @@ is what became `provider.tf` later on.
 to keep track of changes even though that the learning curve for this project
 would be steeper. 
 
+
+Provisioned cluster with 2 nodes(autoscaling to 4):
+![cluster](screenshots/deployedcluster.PNG)
+
 ## Learning KubeDB
 - I decided to go with one of the suggestions in the challenge to use
 [KubeDB](https://kubedb.com/) as is seemed like the most straightforward way to
