@@ -16,9 +16,9 @@ The requirements are:
 ## First Steps
 
 - I didn't even know how to provision a Kubernetes cluster at first so I first
-followed the steps on how to do that from one of the excellent [presentations] 
-(https://www.youtube.com/watch?v=dCv6dRjtgHI) at the DigitalOcean Deploy 
-Conference.
+followed the steps on how to do that from one of the excellent 
+[presentations](https://www.youtube.com/watch?v=dCv6dRjtgHI) at the 
+DigitalOcean Deploy Conference.
 
 
 
