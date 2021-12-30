@@ -29,8 +29,13 @@ would be steeper.
 ## Learning KubeDB
 - I decided to go with one of the suggestions in the challenge to use
 [KubeDB](https://kubedb.com/) as is seemed like the most straightforward way to
-set things up.
+set things up. This is also where I introduced to [Helm](https://helm.sh/) for 
+installing packages on Kubernetes.
 
-
+- I first set up the basic SQL example for KubeDB, which still lives on in 
+`phpmyadmin.tf`, `sql_crd.tf` and `namespace.tf`. Because I felt committed to
+using Terraform, I converted the YAML examples to HCL using the command
+` echo 'yamldecode(file("<yaml_file>"))' | terraform console > <tf_file>` and 
+then putting the output inside a "kubernetes_manifest" resource.
 
 
